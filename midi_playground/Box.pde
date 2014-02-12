@@ -1,6 +1,7 @@
 class Box {
-  // XPos, yPos, width, height, fill, stroke
+  // XPos, yPos, width, height, fill, stroke, midi sequence
   int x, y, w, h, f, s;
+  MidiSequence ms;
   Box(int aX, int aY, int aW, int aH, int aF, int aS) {
     x = aX;
     y = aY;
@@ -14,4 +15,10 @@ class Box {
     fill(f);
     rect(x, y, w, h);
   } 
+  void play() {
+    if (ms != null)
+      ms.playSequence(); 
+    else 
+      println("ms null");
+  }
 }
